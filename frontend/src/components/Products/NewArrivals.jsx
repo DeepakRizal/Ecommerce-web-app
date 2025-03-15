@@ -135,12 +135,6 @@ const NewArrivals = () => {
       setCanScrollLeft(leftScroll > 0);
       setCanScrollRight(rightScrollable);
     }
-
-    console.log({
-      scrollLeft: container.scrollLeft,
-      clientWidth: container.clientWidth,
-      containerScrollWidth: container.scrollWidth,
-    });
   };
 
   useEffect(() => {
@@ -148,7 +142,7 @@ const NewArrivals = () => {
     if (container) {
       container.addEventListener("scroll", updateScrollButtons);
       updateScrollButtons();
-      return () => container.removeEventlistener("scroll", updateScrollButtons);
+      return () => container.removeEventListener("scroll", updateScrollButtons);
     }
   }, []);
 
